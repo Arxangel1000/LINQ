@@ -3,4 +3,21 @@
         var posNums = from n in nums
             where n > 0
             select n;
+            
+            ShowResult(posNums);
+    }
+    
+ private void ShowResult(IEnumerable<int> posNums)
+    {
+        Info.text = string.Format("Положительные значения из массива:");
+
+        foreach (var num in posNums)
+        {
+            Debug.LogError(num);
+        }
+        
+        for (int i = 0; i < posNums.Count(); i++)
+        {
+            InfoNums[i].text = posNums.ElementAt(i).ToString();
+        }
     }
