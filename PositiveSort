@@ -1,0 +1,6 @@
+ private void PositiveSort()
+    {
+        var posNums = from n in nums
+            where n > 0
+            select n;
+    }
