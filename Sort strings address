@@ -1,0 +1,17 @@
+ private void SortingAddress()
+    {
+        var netAddrs = from addr in strs
+            where addr.Length > 4 &&
+                  addr.EndsWith(".net", StringComparison.Ordinal)
+            select addr;
+
+        ShowStringResult(netAddrs);
+    }
+    
+     private void ShowStringResult(IEnumerable<string> strs)
+    {
+        for (int i = 0; i < strs.Count(); i++)
+        {
+            InfoStrs[i].text = strs.ElementAt(i);
+        }
+    }
