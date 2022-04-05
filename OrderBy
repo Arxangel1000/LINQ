@@ -1,0 +1,31 @@
+int[] nums = { 10, -19, 4, 7, 2, -5, 0 };
+// Generate a request to get dimensions in sorted order.
+var posNums = from n in nums
+orderby n
+select n;
+
+// Unity example - sorting TextMeshPro child elements based on their numeric values in the text field
+// Text objects are placed in the panel using the HorizontalLayoutGroup so that when changing the places of child objects
+change places and objects on the screens
+
+    private void SortOrderby()
+    {
+        var sort = from n in infoNums
+            orderby int.Parse(n.text)
+            select n;
+        
+        int count = 0;
+        foreach (var s in sort)
+        {
+            infoNums[count++] = s;
+        }
+
+        for (int j = 0; j < infoNums.Length; j++)
+        {
+            for (int i = 0; i < panel.childCount; i++)
+            {
+                if(panel.GetChild(i).GetComponent<TextMeshProUGUI>().text.Equals(infoNums[j].text))
+                    panel.GetChild(i).SetSiblingIndex(j);
+            }
+        }
+    }
